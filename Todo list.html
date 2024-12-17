@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<style>
+    
+    body{
+        background-color: rgb(5, 29, 29); 
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .container{
+        width: 360px;
+        padding: 33px;
+        text-align: center;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        margin-left: 33%;
+        margin-top: 5px;
+    }
+    input{
+        flex: 1;background: transparent;
+        width: 270px;
+        border-radius: 50px;
+        padding: 8px;
+        border: 2px solid rgb(6, 145, 145);
+        border: none;
+        outline: none;
+    }
+    button{
+        width:80px;
+        height: 37px;
+        border: none;
+        border-radius: 2px;
+        outline: none;
+        background: #ff5945;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .inputs{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #edeef0;
+        border-radius: 30px;
+        padding-left: 20px;
+        margin-bottom: 25px;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <h1>Todo App</h1>
+        <div class="inputs">
+            <input type="text" placeholder="Enter your text" id="inp">
+            <button onclick=" submit()">Add</button>
+        </div>
+        <ul id="listdetail">
+
+        </ul>
+    </div>
+
+    <script>
+        let inputs2=document.getElementById("inp");
+        let listcontainer=document.getElementById("listdetail");
+        function submit(){
+           if(inputs2.value == ""){
+            alert("You must write something!");
+           }else{
+            let li =document.createElement("li");
+            li .innerHTML = inputs2.value;
+            listcontainer.appendChild(li);
+            let span = document.createElement("span")
+            span.innerHTML="\u00d7";
+            li.appendChild(span)
+           }
+        }
+    </script>
+</body>
+</html>
